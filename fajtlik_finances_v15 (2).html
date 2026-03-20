@@ -294,6 +294,31 @@
     .form-check input[type="checkbox"]{width:16px;height:16px;margin-top:2px;accent-color:var(--c5);flex-shrink:0}
     .form-check label{font-size:.75rem;color:rgba(201,201,201,.45);line-height:1.6;text-transform:none;letter-spacing:0;font-weight:400}
 
+.floating-phone {
+  position: fixed;
+  bottom: 28px;
+  left: 28px; /* Bude na ľavej strane, oproti tlačidlu Kontakt */
+  z-index: 999;
+  background: var(--c1); /* Tmavohnedá farba značky pre kontrast */
+  color: var(--white);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 28px rgba(0,0,0,.4);
+  transition: transform .2s, background .2s;
+}
+.floating-phone:hover { 
+  background: var(--c2); 
+  transform: translateY(-3px); 
+}
+.floating-phone svg { 
+  width: 22px; 
+  height: 22px; 
+}
+    
     /* ── FOOTER ── */
     footer{
       background:#130802;padding:2rem 5%;
@@ -409,6 +434,12 @@
 </nav>
 
 <a href="#kontakt" class="floating-cta" id="floatingCta">Kontaktovať</a>
+
+  <a href="tel:+421911471679" class="floating-phone" title="Zavolajte mi">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.17a16 16 0 006.29 6.29l1.53-1.53a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+  </svg>
+</a>
 
 <!-- HERO -->
 <section id="hero">
