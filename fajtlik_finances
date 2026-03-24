@@ -80,14 +80,14 @@
 <body>
 
   <nav>
-    <a href="fajtlik_finances_v15 (2).html" class="nav-logo">
+    <a href="index.html" class="nav-logo">
       <img src="https://raw.githubusercontent.com/sh91connect-hub/fajtlikfinances/refs/heads/main/imagesbanky/logo1.png" alt="Fajtlík & Finances" style="height: 48px; width: auto; filter: drop-shadow(0 0 10px rgba(220, 220, 220, 0.4));" />
       <div class="nav-brand">
         <span class="nav-brand-top">Fajtlík</span>
         <span class="nav-brand-bot">& Finances</span>
       </div>
     </a>
-    <a href="fajtlik_finances_v15 (2).html" class="btn-back">← Späť na web</a>
+    <a href="index.html" class="btn-back">← Späť na web</a>
   </nav>
 
   <main class="page-wrapper">
