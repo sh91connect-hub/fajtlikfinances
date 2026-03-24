@@ -332,10 +332,16 @@
     }
 
     /* ── FOOTER ── */
-    footer{
-      background:#130802;padding:2rem 5%;
-      display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;
-    }
+   footer {
+  background: #130802;
+  /* Zmenili sme padding: prvé číslo je vrch, druhé sú boky, TRETIE (100px) je spodok! */
+  padding: 3rem 5% 100px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
     .footer-logo{display:flex;align-items:center;gap:10px}
     .footer-copy{font-size:.67rem;color:rgba(200,200,200,.28);letter-spacing:.06em;font-weight:500}
     .footer-links{display:flex;gap:1.5rem}
@@ -427,6 +433,12 @@
       filter: opacity(1);
       transform: scale(1.06);
     }
+  /* ── SKRYTIE TELEFÓNU NA DESKTOPE ── */
+@media (min-width: 961px) {
+  .floating-phone {
+    display: none !important;
+  }
+}
   </style>
 </head>
 <body>
