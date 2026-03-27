@@ -423,6 +423,7 @@
     .cookie-content p { font-size: 0.75rem; margin: 0; line-height: 1.6; flex: 1; min-width: 280px; }
     .cookie-content a { color: var(--c5); text-decoration: underline; font-weight: 600; }
     .cookie-content a:hover { color: var(--white); }
+    .cookie-btns { display: flex; gap: 0.8rem; flex-shrink: 0; align-items: center; }
 
     /* ── MOBILE FIRST & RESPONSIVE TWEAKS ── */
     @media(max-width:960px){
@@ -457,8 +458,8 @@
       .benefits-grid{grid-template-columns:1fr}
       .section{padding:70px 5%}
       .cookie-banner { padding: 1.2rem; }
-      .cookie-btns { width: 100%; }
-      .cookie-btns button { width: 100%; }
+      .cookie-btns { flex-direction: column; width: 100%; margin-top: 1rem; }
+      .cookie-btns button { width: 100%; text-align: center; }
     }
   </style>
 </head>
@@ -717,9 +718,10 @@
 
 <div id="cookie-banner" class="cookie-banner">
   <div class="cookie-content">
-    <p>Tento web používa súbory cookies na zabezpečenie základného fungovania a analýzu návštevnosti. Pokračovaním v prehliadaní s tým súhlasíte. <a href="gdpr.html">Zistiť viac o ochrane súkromia</a>.</p>
+    <p>Tento web používa súbory cookies. Technické sú nevyhnutné pre fungovanie webu. Analytické nám pomáhajú web zlepšovať, no potrebujeme na ne váš súhlas. <a href="gdpr.html">Viac o ochrane súkromia</a>.</p>
     <div class="cookie-btns">
-      <button id="accept-cookies" class="btn-primary" style="padding: 0.7rem 1.8rem; font-size: 0.75rem;">Rozumiem a súhlasím</button>
+      <button id="reject-cookies" class="btn-secondary" style="padding: 0.6rem 1.2rem; font-size: 0.7rem; border-color: var(--c5); color: var(--silver-light);">Len nevyhnutné</button>
+      <button id="accept-cookies" class="btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.7rem;">Prijať všetky</button>
     </div>
   </div>
 </div>
@@ -780,18 +782,24 @@
     obs.observe(el);
   });
 
-  // Logika pre Cookies lištu
+  // Logika pre Cookies lištu (Právne v poriadku)
   const cookieBanner = document.getElementById('cookie-banner');
   const acceptBtn = document.getElementById('accept-cookies');
+  const rejectBtn = document.getElementById('reject-cookies');
 
-  if (!localStorage.getItem('cookiesAccepted')) {
+  if (!localStorage.getItem('cookieConsent')) {
     setTimeout(() => {
       cookieBanner.classList.add('show');
     }, 1500);
   }
 
   acceptBtn.addEventListener('click', () => {
-    localStorage.setItem('cookiesAccepted', 'true');
+    localStorage.setItem('cookieConsent', 'all');
+    cookieBanner.classList.remove('show');
+  });
+
+  rejectBtn.addEventListener('click', () => {
+    localStorage.setItem('cookieConsent', 'essential');
     cookieBanner.classList.remove('show');
   });
 </script>
